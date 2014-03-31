@@ -6,10 +6,11 @@ class role_elasticsearch(
   $clustername        = 'clustername',
   $replicas           = '0',
   $shards             = '5',
+  $es_version         = '1.1.0',
 ){
 
   class { 'elasticsearch':
-    package_url           => 'https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.0.1.deb',
+    package_url           => "https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-${es_version}.deb",
     java_install          => true,
     config                => {
       'cluster'           => {
