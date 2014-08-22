@@ -36,7 +36,7 @@ management, etc.) this is the time to mention it.
 * This is a great place to stick any warnings.
 * Can be in list or paragraph form.
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements
 
 elasticsearch/puppet-elasticsearch
 
