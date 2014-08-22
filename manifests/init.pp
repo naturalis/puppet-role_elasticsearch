@@ -6,7 +6,7 @@ class role_elasticsearch(
   $clustername        = 'clustername',
   $replicas           = '0',
   $shards             = '5',
-  $es_version         = '1.1.0',
+  $es_version         = '1.1.1',
 ){
 
   class { 'elasticsearch':
