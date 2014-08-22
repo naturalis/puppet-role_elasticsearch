@@ -2,11 +2,11 @@
 #
 #
 class role_elasticsearch(
-  $nodename,
-  $clustername        = 'clustername',
-  $replicas           = '0',
-  $shards             = '5',
-  $es_version         = '1.1.1',
+  $nodename    = $::fqdn,
+  $clustername = $::fqdn,
+  $replicas    = '0',
+  $shards      = '5',
+  $es_version  = '1.1.1',
 ){
 
   class { 'elasticsearch':
