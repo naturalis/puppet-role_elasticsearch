@@ -42,11 +42,9 @@ elasticsearch/puppet-elasticsearch
 
 ### Beginning with role_elasticsearch
 
-The very basic steps needed for a user to get the module up and running.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+Test elasticsearch: http://10.42.1.128:9200/
+Test elasticsearch: http://10.42.1.128:9200/_cluster/health?pretty=true
+Test kopf plugin: http://10.42.1.128:9200/_plugin/kopf/.
 
 ## Usage
 
