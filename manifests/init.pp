@@ -2,8 +2,8 @@
 #
 #
 class role_elasticsearch(
-  $nodename    = 'testing',
-  $clustername = 'testing',
+  $nodename    = $::hostname,
+  $clustername = 'cluster-01',
   $replicas    = '0',
   $shards      = '1',
   $es_version  = '1.1.1',
@@ -12,9 +12,11 @@ class role_elasticsearch(
   class { 'elasticsearch':
     package_url           => "https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-${es_version}.deb",
     java_install          => true,
+    
+    # Default settings
     config                => {
       'cluster'           => {
-       'name'             => $clustername,
+        'name'            => $clustername,
        },
        'node'                 => {
          'name'               => $nodename
@@ -26,7 +28,18 @@ class role_elasticsearch(
        'network'              => {
          'host'               => $::ipaddress
        }
-     }
+     } 
+   }
    
+  # Create instance
+  elasticsearch::instance { 'instance-01':
+    #config => { 'node.name' => 'othernodename' }
   }
+
+  # Install kopf plugin
+  elasticsearch::plugin { 'lmenezes/elasticsearch-kopf':
+    module_dir => 'kopf',
+    instances  => 'instance-01'
+  }
+
 }
