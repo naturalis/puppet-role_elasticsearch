@@ -2,8 +2,8 @@
 #
 #
 class role_elasticsearch(
-  $nodename    = $::fqdn,
-  $clustername = $::fqdn,
+  $nodename    = $::hostname,
+  $clustername = $::hostname,
   $replicas    = '0',
   $shards      = '5',
   $es_version  = '1.1.1',
