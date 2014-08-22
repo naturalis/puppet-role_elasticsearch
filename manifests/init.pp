@@ -5,7 +5,7 @@ class role_elasticsearch(
   $nodename    = $::hostname,
   $clustername = $::hostname,
   $replicas    = '0',
-  $shards      = '5',
+  $shards      = '1',
   $es_version  = '1.1.1',
 ){
 
