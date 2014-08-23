@@ -42,14 +42,9 @@ elasticsearch/puppet-elasticsearch
 
 ### Beginning with role_elasticsearch
 
-Test elasticsearch: 
-http://10.42.1.128:9200/
-
-Test elasticsearch: 
-http://10.42.1.128:9200/_cluster/health?pretty=true
-
-Test kopf plugin: 
-http://10.42.1.128:9200/_plugin/kopf/.
+* elasticsearch: http://localhost:9200/_cluster/health?pretty=true
+* kopf plugin: http://localhost:9200/_plugin/kopf
+* kibana plugin: http://localhost:9200/_plugin/kibana
 
 ## Usage
 
