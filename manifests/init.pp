@@ -42,7 +42,7 @@ class role_elasticsearch(
     instances  => 'instance-01'
   }
   
-  # Install kibana plugin
+  # Install latest version of kibana plugin
   elasticsearch::plugin { 'elasticsearch/kibana':
     module_dir => 'kibana',
     url        => 'http://download.elasticsearch.org/kibana/kibana/kibana-latest.zip',
