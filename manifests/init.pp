@@ -2,11 +2,12 @@
 #
 #
 class role_elasticsearch(
-  $nodename    = $::hostname,
-  $clustername = 'cluster-01',
-  $replicas    = '0',
-  $shards      = '1',
-  $es_version  = '1.1.1',
+  $node.name    = $::hostname,
+  $cluster.name = 'cluster-01',
+  $network.host = '127.0.0.1', #$::ipaddress
+  $replicas     = '0',
+  $shards       = '1',
+  $es_version   = '1.1.1',
 ){
 
   class { 'elasticsearch':
@@ -16,17 +17,17 @@ class role_elasticsearch(
     # Default settings
     config                => {
       'cluster'           => {
-        'name'            => $clustername,
+        'name'            => $cluster.name,
        },
        'node'                 => {
-         'name'               => $nodename
+         'name'               => $node.name
        },
        'index'                => {
          'number_of_replicas' => $replicas,
          'number_of_shards'   => $shards
        },
        'network'              => {
-         'host'               => $::ipaddress
+         'host'               => $network.host
        }
      } 
    }
