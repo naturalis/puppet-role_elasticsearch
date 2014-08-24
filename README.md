@@ -40,6 +40,20 @@ elasticsearch/puppet-elasticsearch
 * kopf plugin: http://localhost:9200/_plugin/kopf
 * kibana plugin: http://localhost:9200/_plugin/kibana
 
+Very basic config to test if it is working. Create file test.conf and add: 
+
+input { stdin { } }
+
+output {
+  elasticsearch {
+    host    => localhost
+    cluster => "cluster-01" }
+  stdout { }
+}
+
+Then run ./opt/logstash/bin/logstash -f test.conf.
+To check if elasticsearch receive the data run: curl 'http://localhost:9200/_search?pretty'.
+
 ## Usage
 
 Put the classes, types, and resources for customizing, configuring, and doing
