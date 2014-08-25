@@ -46,7 +46,6 @@ Very basic config to test if it is working. Create file test.conf and add:
 
     output {
       elasticsearch {
-        host    => localhost
         cluster => "cluster-01" }
       stdout { }
     }
