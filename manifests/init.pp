@@ -4,7 +4,7 @@
 class role_elasticsearch(
   $nodename    = $::hostname,
   $clustername = 'cluster-01',
-  $networkhost = $::ipaddress, #'127.0.0.1',
+  $networkhost = $::ipaddress,
   $replicas    = '0',
   $shards      = '1',
   $es_version  = '1.1.1',
