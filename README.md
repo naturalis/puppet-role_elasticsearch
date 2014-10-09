@@ -46,8 +46,12 @@ Very basic config to test if it is working. Create file test.conf and add:
 
     output {
       elasticsearch {
-        cluster => "cluster-01" }
-      stdout { }
+        cluster => "cluster-01" 
+      }
+      stdout { 
+        codec => rubydebug
+      }
+
     }
 
 Then run ./opt/logstash/bin/logstash -f test.conf.
