@@ -12,7 +12,7 @@ class role_elasticsearch(
 
   class { 'elasticsearch':
     package_url           => "https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-${es_version}.deb",
-    java_install          => true,
+    #java_install          => true,
     
     # Default settings
     config                => {
