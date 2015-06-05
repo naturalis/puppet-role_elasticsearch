@@ -3,7 +3,7 @@
 #
 class role_elasticsearch(
   $nodename    = $::hostname,
-  $clustername = 'cluster-03',
+  $clustername = 'cluster-01',
   $networkhost = $::ipaddress,
   $replicas    = '0',
   $shards      = '1',
