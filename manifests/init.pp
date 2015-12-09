@@ -1,7 +1,8 @@
 # == Class: role_elasticsearch
 #
 #
-class role_elasticsearch(
+class role_elasticsearch (
+  $package_url = 'https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.1.0/elasticsearch-2.1.0.deb',
   $nodename    = $::hostname,
   $clustername = 'cluster-01',
   $networkhost = $::ipaddress,
@@ -11,7 +12,7 @@ class role_elasticsearch(
 ) {
 
   class { 'elasticsearch':
-    package_url  => "https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-${es_version}.deb",
+    package_url  => $package_url,
     java_install => true,
     
     # Default settings
