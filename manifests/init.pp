@@ -2,7 +2,7 @@
 #
 #
 class role_elasticsearch (
-  $package_url = 'https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.1.0/elasticsearch-2.1.0.deb',
+  $package_url = 'https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.3.deb',
   $nodename    = $::hostname,
   $clustername = 'cluster-01',
   $networkhost = $::ipaddress,
