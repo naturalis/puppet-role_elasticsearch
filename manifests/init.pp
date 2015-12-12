@@ -40,13 +40,11 @@ class role_elasticsearch (
 
   # Install kopf plugin
   elasticsearch::plugin { 'lmenezes/elasticsearch-kopf':
-    module_dir => 'kopf',
     instances  => 'es-01'
   }
   
   # Install kibana plugin
   elasticsearch::plugin { 'elasticsearch/kibana':
-    module_dir => 'kibana',
     url        => 'http://download.elasticsearch.org/kibana/kibana/kibana-latest.zip',
     instances  => 'es-01'
   }
