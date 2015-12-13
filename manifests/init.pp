@@ -8,7 +8,6 @@ class role_elasticsearch (
   $networkhost = $::ipaddress,
   $replicas    = '0',
   $shards      = '1',
-  $es_version  = '1.1.1',
 ) {
 
   class { 'elasticsearch':
@@ -35,17 +34,10 @@ class role_elasticsearch (
    
   # Create instance
   elasticsearch::instance { 'es-01':
-    #config => { 'node.name' => 'othernodename' }
   }
 
   # Install kopf plugin
   elasticsearch::plugin { 'lmenezes/elasticsearch-kopf':
-    instances  => 'es-01'
-  }
-  
-  # Install kibana plugin
-  elasticsearch::plugin { 'elasticsearch/kibana':
-    url        => 'http://download.elasticsearch.org/kibana/kibana/kibana-latest.zip',
     instances  => 'es-01'
   }
 
